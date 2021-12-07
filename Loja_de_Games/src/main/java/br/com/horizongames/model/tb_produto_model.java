@@ -1,11 +1,10 @@
 package br.com.horizongames.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -23,25 +22,26 @@ public class tb_produto_model {
 	@Id
 	// Declarando auto-increment no id_produto
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_produto;
+	private long id;
 	
 	@NotBlank(message="É obrigatório o nome do produto")
 	private String nome;
 	
-	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
-	@NotBlank(message="É obrigatório colocar um valor")
+	@ManyToOne
 	@JsonIgnoreProperties("tb_produtos")
-	private int tipo;
+	private tb_categoria_model categoria;
 	
 	@NotBlank(message="É obrigatório colocar o preço do produto")
 	private double preço;
+	
+	
 
 	public long getId_produto() {
-		return id_produto;
+		return id;
 	}
 
 	public void setId_produto(long id_produto) {
-		this.id_produto = id_produto;
+		this.id = id_produto;
 	}
 
 	public String getNome() {
@@ -52,13 +52,6 @@ public class tb_produto_model {
 		this.nome = nome;
 	}
 
-	public int getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
-	}
 
 	public double getPreço() {
 		return preço;
@@ -67,5 +60,22 @@ public class tb_produto_model {
 	public void setPreço(double preço) {
 		this.preço = preço;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public tb_categoria_model getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(tb_categoria_model categoria) {
+		this.categoria = categoria;
+	}
+
 	
 }

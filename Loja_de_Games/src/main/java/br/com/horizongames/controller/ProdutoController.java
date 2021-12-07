@@ -2,6 +2,8 @@ package br.com.horizongames.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,12 +46,12 @@ public class ProdutoController {
 	}
 	
 	@PostMapping //inserir dados no banco de dados
-	public ResponseEntity<tb_produto_model> Post(@RequestBody tb_produto_model post){
+	public ResponseEntity<tb_produto_model> Post(@Valid @RequestBody tb_produto_model post){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
 	}
 	 
 	@PutMapping //atualizar um dado ja existente no banco de dados
-	public ResponseEntity<tb_produto_model> Put(@RequestBody tb_produto_model put){
+	public ResponseEntity<tb_produto_model> Put(@Valid @RequestBody tb_produto_model put){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(put));
 	}
 	
