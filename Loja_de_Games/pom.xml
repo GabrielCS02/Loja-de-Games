@@ -8,11 +8,11 @@
 		<version>2.6.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.horizongames</groupId>
-	<artifactId>Loja_de_Games</artifactId>
+	<groupId>org.generation.meuBlog</groupId>
+	<artifactId>meuBlog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Loja_de_Games</name>
-	<description>Projeto Loja de games</description>
+	<name>meuBlog</name>
+	<description>Iniciando o blog pessoal</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

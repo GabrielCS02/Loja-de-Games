@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="br.com.horizongames.model.tb_categoria_model"/>
+    <fullyQualifiedTypeName name="br.com.horizonGames.repository.ProdutoRepository"/>
+    <fullyQualifiedTypeName name="br.com.horizonGames.repository.CategoriaRepository"/>
 </qualifiedTypeNameHistroy>
