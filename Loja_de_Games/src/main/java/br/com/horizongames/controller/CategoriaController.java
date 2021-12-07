@@ -2,6 +2,7 @@ package br.com.horizongames.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,17 +41,17 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/descricao/{descricao}") //retornar as postagens pela categoria
-	public ResponseEntity<List<tb_categoria_model>> GetByDescricao(@PathVariable String descricao){
+	public ResponseEntity<List<tb_categoria_model>> GetByDescricao(@Valid @PathVariable String descricao){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(descricao));
 	}
 	
 	@PostMapping //inserir dados no banco de dados
-	public ResponseEntity<tb_categoria_model> Post(@RequestBody tb_categoria_model post){
+	public ResponseEntity<tb_categoria_model> Post(@Valid @RequestBody tb_categoria_model post){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
 	}
 	
 	@PutMapping //atualizar um dado ja existente no banco de dados
-	public ResponseEntity<tb_categoria_model> Put(@RequestBody tb_categoria_model put){
+	public ResponseEntity<tb_categoria_model> Put(@Valid @RequestBody tb_categoria_model put){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(put));
 	}
 	
