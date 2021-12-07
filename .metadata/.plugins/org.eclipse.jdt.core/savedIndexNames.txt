@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\gbbis\Desktop\Programação\Generation\Projeto Integrador\Loja_de_Games\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+137777922.index
