@@ -1,4 +1,4 @@
-package br.com.horizongames.controller;
+package br.com.horizonGames.controller;
 
 import java.util.List;
 
@@ -17,47 +17,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.horizongames.model.tb_categoria_model;
-import br.com.horizongames.repository.tb_categoria_repository;
+import br.com.horizonGames.model.Categoria;
+import br.com.horizonGames.repository.CategoriaRepository;
 
-@RestController // Função de marcar que o controlador está fornecendo serviços REST com o tipo de resposta JSON.
-@RequestMapping("/categoria") //Define a entry point (define a URL)
-@CrossOrigin("*") // Mecanismo utilizado pelos navegadores para compartilhar recursos entre diferentes origens.
+
+@RestController
+@RequestMapping("/categoria")
+@CrossOrigin(origins = "*",  allowedHeaders = "*")
 public class CategoriaController {
 	
-	@Autowired // Define indica um ponto onde a injeção automática deve ser aplicada. Usada em métodos, atributos e construtores.
-	private tb_categoria_repository repository;
+	@Autowired
+	private CategoriaRepository categoriaRepository;
 	
-	@GetMapping // retornar todas as postagens
-	public ResponseEntity<List<tb_categoria_model>> GetAll(){
-		return ResponseEntity.ok(repository.findAll());
+	@GetMapping
+	public ResponseEntity<List<Categoria>> getAll(){
+		return ResponseEntity.ok(categoriaRepository.findAll());
 	}
 	
-	@GetMapping("/{id}") // retornar todas as postagens pelo ID
-	public ResponseEntity<tb_categoria_model> GetById(@PathVariable long id){
-		return repository.findById(id)
-				.map(resp -> ResponseEntity.ok(resp))
+	@GetMapping("/{id}")
+	public ResponseEntity<Categoria> getById(@Valid @PathVariable long id){
+		return categoriaRepository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
-	
-	@GetMapping("/descricao/{descricao}") //retornar as postagens pela categoria
-	public ResponseEntity<List<tb_categoria_model>> GetByDescricao(@Valid @PathVariable String descricao){
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(descricao));
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<Categoria>> getByName(@Valid @PathVariable String nome){
+	return ResponseEntity.ok(categoriaRepository.findAllByDescricaoContainingIgnoreCase(nome));	
 	}
 	
-	@PostMapping //inserir dados no banco de dados
-	public ResponseEntity<tb_categoria_model> Post(@Valid @RequestBody tb_categoria_model post){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
+	@PostMapping
+	public ResponseEntity<Categoria> postTema (@Valid @RequestBody Categoria categoria){
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(categoriaRepository.save(categoria));
 	}
 	
-	@PutMapping //atualizar um dado ja existente no banco de dados
-	public ResponseEntity<tb_categoria_model> Put(@Valid @RequestBody tb_categoria_model put){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(put));
+	@PutMapping
+	public ResponseEntity<Categoria> putTema (@Valid @RequestBody Categoria categoria){
+		return ResponseEntity.ok(categoriaRepository.save(categoria));
+				
 	}
 	
-	@DeleteMapping("/{id}") //deletar dados do banco de dados pelo id
-	public void Delete(@PathVariable long id) {
-		repository.deleteById(id);
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable long id) {
+		categoriaRepository.deleteById(id);
 	}
-
 }
