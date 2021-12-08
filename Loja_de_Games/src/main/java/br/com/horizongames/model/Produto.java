@@ -1,4 +1,4 @@
-package br.com.horizonGames.model;
+package br.com.horizongames.model;
 
 import java.util.Date;
 
@@ -25,7 +25,7 @@ public class Produto {
 	private long id;
 	
 	@NotBlank(message ="Obrigatório nome do produto.")
-	@Size(min = 3 , max = 100)
+	@Size(max = 100)
 	private String nome;
 	
 	@NotNull(message = "Produto deve conter preço")

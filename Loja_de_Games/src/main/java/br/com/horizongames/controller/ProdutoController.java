@@ -1,4 +1,4 @@
-package br.com.horizonGames.controller;
+package br.com.horizongames.controller;
 
 import java.util.List;
 
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.horizonGames.model.Produto;
-import br.com.horizonGames.repository.ProdutoRepository;
+import br.com.horizongames.model.Produto;
+import br.com.horizongames.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produto")
