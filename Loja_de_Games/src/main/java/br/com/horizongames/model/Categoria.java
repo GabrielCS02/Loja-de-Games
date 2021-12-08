@@ -1,4 +1,4 @@
-package br.com.horizonGames.model;
+package br.com.horizongames.model;
 
 import java.util.List;
 
@@ -32,7 +32,9 @@ public class Categoria {
 	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
-	private List<Produto> Produto;
+	private List<Produto> produto;
+
+	
 
 	public long getId_categoria() {
 		return id_categoria;
@@ -67,11 +69,11 @@ public class Categoria {
 	}
 
 	public List<Produto> getProduto() {
-		return Produto;
+		return produto;
 	}
 
 	public void setProduto(List<Produto> produto) {
-		Produto = produto;
+		this.produto = produto;
 	}
 	
 	
