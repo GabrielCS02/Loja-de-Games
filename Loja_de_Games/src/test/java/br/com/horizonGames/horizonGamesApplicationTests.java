@@ -1,10 +1,10 @@
-package org.generation.meuBlog;
+package br.com.horizonGames;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MeuBlogApplicationTests {
+class horizonGamesApplicationTests {
 
 	@Test
 	void contextLoads() {
