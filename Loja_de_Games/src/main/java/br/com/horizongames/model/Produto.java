@@ -35,7 +35,7 @@ public class Produto {
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produtos")
+	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 
 	public long getId() {
