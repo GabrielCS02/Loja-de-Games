@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -26,6 +27,7 @@ public class Usuario {
 	
 	@NotBlank(message = "O atributo usuario não poderá ficar vazio")
 	@Size(min = 5, max = 100, message=" o campo deverá ter no mínimo 5 caracteres e no máximo 100")
+	@Email
 	private String usuario;
 	
 	@NotBlank(message = "O atributo senha não poderá ficar vazio")
