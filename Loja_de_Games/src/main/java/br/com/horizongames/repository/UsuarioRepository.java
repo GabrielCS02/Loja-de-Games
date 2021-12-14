@@ -7,7 +7,7 @@ import org.generation.blogPessoal.model.Usuario;
 
 public class UsuarioRepository {
 	/**
-	 * Método que busca um usuário pelo seu usuario (email).
+	 * Filtro para buscar um usuario dentro do atributo "usuario" na tb_usuario
 	 * 
 	 * select * from tb_usuarios where usuario = "usuario procurado"
 	 */
