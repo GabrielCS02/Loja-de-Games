@@ -1,11 +1,12 @@
 package br.com.horizongames.repository;
 
-import java.util.List;
 import java.util.Optional;
 
-import org.generation.blogPessoal.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class UsuarioRepository {
+import br.com.horizongames.model.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
 	/**
 	 * Filtro para buscar um usuario dentro do atributo "usuario" na tb_usuario
 	 * 
