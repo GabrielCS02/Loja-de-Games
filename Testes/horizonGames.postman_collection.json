@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "092083f9-1868-4c37-af4c-12c14d69c245",
+		"name": "horizonGames",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Cadastro",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gabriel Costinha 2\",\r\n    \"usuario\": \"costinhabrabo2@gmail.com\",\r\n    \"senha\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"cadastrar"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Dec 2021 19:17:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"nome\": \"Gabriel Costinha 2\",\n    \"usuario\": \"costinhabrabo2@gmail.com\",\n    \"senha\": \"$2a$10$H9jrlQBjAsRt0DMfCUhWYOrGftScSCLWdA5QEJ7RGiu0q2r8encjW\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Logar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Logar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"costinhabrabo2@gmail.com\",\r\n    \"senha\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/logar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"logar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Dec 2021 19:17:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 0,\n    \"nome\": \"Gabriel Costinha 2\",\n    \"usuario\": \"costinhabrabo2@gmail.com\",\n    \"senha\": \"123456789\",\n    \"token\": \"Basic Y29zdGluaGFicmFibzJAZ21haWwuY29tOjEyMzQ1Njc4OQ==\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Autenticar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Autenticar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y29zdGluaGFicmFibzJAZ21haWwuY29tOjEyMzQ1Njc4OQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Resident Evil 5\",\r\n    \"preço\": \"300\",\r\n    \"categoria\":{ \"id_categoria\": 1 }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Dec 2021 19:22:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_categoria\": 1,\n        \"descricao\": \"Terror\",\n        \"tipo_jogo\": \"Single Player\",\n        \"desenvolvedores\": \"EA\",\n        \"produto\": [\n            {\n                \"id\": 4,\n                \"nome\": \"Resident Evil\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:22:03\"\n            },\n            {\n                \"id\": 5,\n                \"nome\": \"Resident Evil 2\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:22:06\"\n            },\n            {\n                \"id\": 6,\n                \"nome\": \"Resident Evil 3\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:22:16\"\n            },\n            {\n                \"id\": 7,\n                \"nome\": \"Resident Evil 4\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:22:22\"\n            },\n            {\n                \"id\": 8,\n                \"nome\": \"Resident Evil 5\",\n                \"preço\": 300,\n                \"data\": \"2021-12-14 16:22:28\"\n            }\n        ]\n    },\n    {\n        \"id_categoria\": 2,\n        \"descricao\": \"Ação\",\n        \"tipo_jogo\": \"Single Player\",\n        \"desenvolvedores\": \"EA\",\n        \"produto\": []\n    },\n    {\n        \"id_categoria\": 3,\n        \"descricao\": \"Corrida\",\n        \"tipo_jogo\": \"Single Player\",\n        \"desenvolvedores\": \"EA\",\n        \"produto\": [\n            {\n                \"id\": 1,\n                \"nome\": \"Need for speed\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:21:05\"\n            },\n            {\n                \"id\": 2,\n                \"nome\": \"Need for speed 2\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:21:18\"\n            },\n            {\n                \"id\": 3,\n                \"nome\": \"Need for speed 3\",\n                \"preço\": 0,\n                \"data\": \"2021-12-14 16:21:21\"\n            }\n        ]\n    },\n    {\n        \"id_categoria\": 4,\n        \"descricao\": \"Luta\",\n        \"tipo_jogo\": \"Single Player\",\n        \"desenvolvedores\": \"EA\",\n        \"produto\": []\n    },\n    {\n        \"id_categoria\": 5,\n        \"descricao\": \"Infantil\",\n        \"tipo_jogo\": \"Single Player\",\n        \"desenvolvedores\": \"EA\",\n        \"produto\": []\n    }\n]"
+				}
+			]
+		}
+	]
+}
